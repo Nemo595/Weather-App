@@ -8,10 +8,10 @@ function Weather() {
   const days = 3; // Number of days of forecast you want
 
   // Initialize the location based on latitude and longitude or default to the location from getLocation
-  let initialLocation = getLat() +","+ getLng();
+  
 
   // State to manage location, weather data, and errors
-  const [location, setLocation] = useState(initialLocation);
+  const [location, setLocation] = useState(null);
   const [weatherData, setWeatherData] = useState(null);
   const [error, setError] = useState(null);
 
@@ -44,7 +44,7 @@ function Weather() {
     <div className="App">
       <div className="weather-controls-container">
         <Buttons
-          location={location}
+          location={""}
           onLocationChange={handleLocationChange}
           onFetchWeather={fetchWeather}
         />
